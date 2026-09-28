@@ -1,0 +1,64 @@
+# Team members. Each entry becomes a card on /team/, in the order listed here.
+# Fields: name (required), role, affiliation, bio, photo (path under public/, e.g. /img/team/name.jpg), alt, link.
+# `alt` is the alt text for the photo — describe the person briefly.
+# Move someone to the `past:` list when they leave.
+
+current:
+  - name: Sile O'Modhrain
+    role: Faculty lead
+    affiliation: Performing Arts Technology, School of Music, Theatre & Dance · School of Information · University of Michigan
+    bio: ""
+    photo: /img/team/sile.jpg
+    alt: Sile O'Modhrain smiling, with short curly hair and a purple and blue patterned top
+    link: https://sileomo.github.io
+
+  - name: Cecilia Hiros
+    role: PhD Candidate
+    affiliation: Music Theory · University of Michigan
+    bio: ""
+    photo: /img/team/cecilia.jpg
+    alt: Black-and-white photo of Cecilia Hiros seen through the strings of a harp
+
+  - name: Sieun Kim
+    role: PhD Student
+    affiliation: Electrical and Computer Engineering · University of Michigan
+    bio: ""
+    photo: /img/team/sieun.jpg
+    alt: Sieun Kim smiling, seated outdoors in a white patterned cardigan
+    link: https://kimsieun.com
+
+  - name: Yixuan Jin
+    role: MS Student
+    affiliation: Performing Arts Technology · University of Michigan
+    bio: ""
+    photo: /img/team/placeholder.svg
+    alt: Portrait placeholder for Yixuan Jin
+
+  - name: Alex Shamoun
+    role: BS Student
+    affiliation: University of Michigan
+    bio: ""
+    photo: /img/team/placeholder.svg
+    alt: Portrait placeholder for Alex Shamoun
+
+  - name: Amber Leslie
+    role: BS Student
+    affiliation: University of Michigan
+    bio: ""
+    photo: /img/team/placeholder.svg
+    alt: Portrait placeholder for Amber Leslie
+
+  - name: Persi Gupta
+    role: BS Student
+    affiliation: University of Michigan
+    bio: ""
+    photo: /img/team/placeholder.svg
+    alt: Portrait placeholder for Persi Gupta
+
+past:
+  - name: Zaina Saab
+    role: Past member
+    affiliation: University of Michigan
+    bio: ""
+    photo: /img/team/placeholder.svg
+    alt: Portrait placeholder for Zaina Saab

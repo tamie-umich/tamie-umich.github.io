@@ -1,0 +1,30 @@
+---
+import Base from '../layouts/Base.astro';
+import Member from '../components/Member.astro';
+import { team } from '../lib/data';
+---
+
+<Base title="Team" description="The people behind TAMIE at the University of Michigan.">
+  <h1>Team</h1>
+  <p class="lede muted" style="max-width:60ch">
+    TAMIE brings together a team of students across engineering, music technology, information and design.
+  </p>
+
+  <section class="section no-rule">
+    <h2>Members</h2>
+    <ul class="team">
+      {team.current.map((m) => <Member m={m} />)}
+    </ul>
+  </section>
+
+  {
+    team.past && team.past.length > 0 && (
+      <section class="section no-rule">
+        <h2>Past members</h2>
+        <ul class="team">
+          {team.past.map((m) => <Member m={m} />)}
+        </ul>
+      </section>
+    )
+  }
+</Base>

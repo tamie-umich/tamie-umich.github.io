@@ -1,5 +1,6 @@
 ---
 title: "Hello from TAMIE"
+date: 2026-09-28
 author: TAMIE team
 ---
 

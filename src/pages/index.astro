@@ -1,0 +1,88 @@
+---
+import Base from '../layouts/Base.astro';
+import { news, fmtDate } from '../lib/data';
+---
+
+<Base title="TAMIE">
+<section class="hero">
+  <h1 class="hero-title">TAMIE: Trainable Accessible Musical Instruments and Environments</h1>
+  <div class="hero-text">
+    <p class="lede">
+      TAMIE is building a platform where people train digital musical instruments to respond to the way they move, rather than the other way around.
+    </p>
+    <ul class="tags" aria-label="Project themes">
+      <li>#AccessibleMusic</li>
+      <li>#GestureAndSensing</li>
+      <li>#MachineLearning</li>
+      <li>#HumanComputerInteraction</li>
+    </ul>
+  </div>
+  <div class="hero-art">
+    <img src="/img/hero.svg"
+         alt="Abstract illustration: a dotted pink path traces a gesture that flows into a smooth wave, showing movement being turned into sound."
+         width="480" height="400">
+  </div>
+</section>
+
+<section class="section" id="news">
+  <h2>News</h2>
+  <ul class="news">
+    {
+      news.map((item) => (
+        <li>
+          <time datetime={item.date}>{fmtDate(item.date, { year: 'numeric', month: 'short', day: 'numeric' })}</time>
+          <span>{item.link ? <a href={item.link}>{item.text}</a> : item.text}</span>
+        </li>
+      ))
+    }
+  </ul>
+  <p style="margin-top:1rem"><a href="/posts/">Read our progress posts →</a></p>
+</section>
+
+<section class="section" id="about">
+  <h2>About the project</h2>
+  <div class="prose">
+    <p>
+      For as long as people have been designing digital musical instruments, designers have been thinking about how to make these instruments accessible for people who may struggle to actively participate in music-making because of cognitive or motor constraints due to an inherited or acquired disability.
+    </p>
+    <p>
+      From the work of the Drake Project, based in the UK <a href="#ref-1" aria-label="Reference 1">[1]</a>, to the work of Pauline Oliveros and her colleagues on AUMI <a href="#ref-2" aria-label="Reference 2">[2]</a>, the impulse to facilitate collaborative music making by means of digitally-enhanced instruments has often exceeded, in creative approach and scope, mainstream work to make generic HCI accessible. This is partly because work on Accessible Digital Musical Instruments (ADMI) is not constrained by the need to deliver access solutions that fit with pre-existing hardware and software environments (e.g. keyboards/mice and Windows/Mac interaction paradigms), and partly because digital musical instruments (DMIs) already contain a wider array of sensors to track a broader range of human movement.
+    </p>
+    <p>
+      As with much work in general HCI, the development of ADMIs has engaged with people with disabilities primarily in the role of end-users, even when such work has purported to follow an ‘inclusive design’ approach. TAMIE sets out not only to embody an inclusive design approach, but also to build an environment where users themselves ‘train’ their own instruments to respond to their movements.
+    </p>
+    <p>
+      Taking seriously the dictum of the Third Paradigm in HCI, which asserts that we design for the bodies of diverse users working in diverse environments as the norm rather than the exception <a href="#ref-3" aria-label="Reference 3">[3]</a>, TAMIE will develop a platform that combines sensing hardware, musical synthesis tools and an open mapping layer, supported by machine learning, that a user can use to map sensed action to musical output.
+    </p>
+    <p>
+      TAMIE takes advantage of the fact that, As Gillian and others have noted, in designing DMIs of any kind, it is more important for a system to recognize all of the gestures of a player all of the time, in contrast to general-purpose gesture recognition systems (e.g. on phones) which can get away with recognizing everyone’s gestures most of the time <a href="#ref-4" aria-label="Reference 4">[4]</a>. In other words, as long as a player can reproduce a gesture consistently enough to fall within the constraints of a classification system (which itself can be programmably tuned using a gesture learning model), an instrument can be configured to respond to their movements in ways that they themselves can determine.
+    </p>
+    <p>TAMIE builds primarily on three areas of prior work.</p>
+    <ol>
+      <li>On the pre-existing examples of ADMIs and their evaluation that can be found throughout the NIME, CHI, and TEI literature.</li>
+      <li>On the growing body of research concerning the role of bodily movement as a design resource when developing interactive systems, and</li>
+      <li>On current work in AI and machine learning for gesture recognition in HCI in general and DMI design in particular.</li>
+    </ol>
+    <h3 id="references">References</h3>
+    <ol class="refs" aria-labelledby="references">
+      <li id="ref-1">The Drake Music Project. <a href="https://www.drakemusic.org">https://www.drakemusic.org</a></li>
+      <li id="ref-2">Tucker, Sherrie (2024). <cite>Improvising Across Abilities: Pauline Oliveros and the Adaptive Use Musical Instrument</cite>. University of Michigan Press.</li>
+      <li id="ref-3">Harrison, S., Tatar, D., and Sengers, P. (2007). The Three Paradigms of HCI. <cite>Human–Computer Interaction</cite>, Taylor &amp; Francis.</li>
+      <li id="ref-4">Gillian, Nicholas (2011). <cite>Gesture Recognition for Musician Computer Interaction</cite>. Ph.D. thesis, Queen's University Belfast.</li>
+    </ol>
+  </div>
+</section>
+
+<section class="section" id="outcomes">
+  <h2>Where it's heading</h2>
+  <div class="prose">
+    <p>
+      Work produced with student and end-user participants will be shared at venues such as
+      NIME, TEI and CHI. The project will conclude with a concert giving participants the
+      opportunity to share their work and their art with the wider University of Michigan
+      community. This site is where we share findings, progress and performances along the way.
+    </p>
+  </div>
+</section>
+
+</Base>

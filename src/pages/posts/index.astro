@@ -1,0 +1,33 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { fmtDate } from '../../lib/data';
+
+const posts = (await getCollection('posts')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+const excerpt = (body = '') => {
+  const words = body.replace(/[#*_>`\[\]()!]/g, '').split(/\s+/).filter(Boolean);
+  return words.slice(0, 40).join(' ') + (words.length > 40 ? '…' : '');
+};
+---
+
+<Base title="Posts" description="Progress updates from the TAMIE project.">
+  <h1>Posts</h1>
+  <p class="lede muted" style="max-width:60ch">Updates on what we're building, learning and performing.</p>
+
+  <ul class="post-list">
+    {
+      posts.map((post) => (
+        <li>
+          <h2>
+            <a href={`/posts/${post.id}/`}>{post.data.title}</a>
+          </h2>
+          <p class="meta">
+            <time datetime={post.data.date.toISOString()}>{fmtDate(post.data.date)}</time>
+            {post.data.author && ` · ${post.data.author}`}
+          </p>
+          <p>{post.data.description ?? excerpt(post.body)}</p>
+        </li>
+      ))
+    }
+  </ul>
+</Base>

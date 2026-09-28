@@ -1,4 +1,4 @@
-/* TAMIE site — two fonts (Fraunces for headings, Inter for text),
+/* TAMIE site — one font (Inter),
    pink + light blue accents. Edit the variables below to retune. */
 
 :root {
@@ -12,9 +12,8 @@
   --paper-2: #f7f7fa;
   --line: #e4e4ea;
   --radius: 14px;
-  --font-head: "Fraunces", Georgia, serif;
   --font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-  --max: 980px;
+  --max: 1140px;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -31,13 +30,13 @@ body {
 }
 
 h1, h2, h3 {
-  font-family: var(--font-head);
-  font-weight: 600;
+  font-family: var(--font-body);
+  font-weight: 700;
   line-height: 1.15;
   margin: 0 0 0.5em;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
 }
-h1 { font-size: clamp(2rem, 5vw, 3rem); }
+h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
 h2 { font-size: clamp(1.5rem, 3.5vw, 2rem); }
 h3 { font-size: 1.25rem; }
 
@@ -53,14 +52,7 @@ a:focus-visible, button:focus-visible {
 img { max-width: 100%; height: auto; display: block; }
 
 .muted { color: var(--ink-muted); }
-.eyebrow {
-  font-size: 0.85rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--blue);
-  margin-bottom: 0.5em;
-}
+.back { font-size: 0.95rem; font-weight: 500; margin-bottom: 0.75em; }
 
 /* Skip link (keyboard users) */
 .skip-link {
@@ -89,13 +81,13 @@ img { max-width: 100%; height: auto; display: block; }
   justify-content: space-between;
   gap: 1rem;
 }
+.brand-mark { font-size: 1.35rem; line-height: 1; }
 .brand {
   display: inline-flex;
   align-items: center;
   gap: 0.6rem;
-  font-family: var(--font-head);
-  font-size: 1.35rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   color: var(--ink);
   text-decoration: none;
 }
@@ -128,29 +120,34 @@ img { max-width: 100%; height: auto; display: block; }
 .hero {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
-  gap: 2.5rem;
-  align-items: center;
+  gap: 1rem 2.5rem;
+  align-items: start;
   padding: 1rem 0 2.5rem;
+}
+.hero-title {
+  grid-column: 1 / -1;
+  text-wrap: balance;
+  margin-bottom: 0.75rem;
 }
 .hero .lede { font-size: 1.2rem; color: var(--ink-muted); }
 .hero-art {
   background: linear-gradient(135deg, var(--blue-soft), var(--pink-soft));
   border-radius: var(--radius);
   padding: 1rem;
+  max-width: 400px;
+  justify-self: end;
 }
-.tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 1rem 0 0; padding: 0; list-style: none; }
+.tags { margin: 1.25rem 0 0; padding: 0; list-style: none; }
 .tags li {
-  font-size: 0.85rem;
   font-weight: 500;
-  padding: 0.3rem 0.75rem;
-  border-radius: 999px;
-  background: var(--blue-soft);
-  color: var(--ink);
+  color: var(--blue);
+  line-height: 1.8;
 }
-.tags li:nth-child(even) { background: var(--pink-soft); }
+.tags li:nth-child(even) { color: var(--pink); }
 
 /* Sections */
 .section { padding: 2rem 0; border-top: 1px solid var(--line); }
+.section.no-rule { border-top: 0; padding-top: 1rem; }
 .section h2 { margin-bottom: 1rem; }
 .prose { max-width: 70ch; }
 .prose ol, .prose ul { padding-left: 1.4rem; }
@@ -163,6 +160,12 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: 0 var(--radius) var(--radius) 0;
 }
 .prose img { border-radius: var(--radius); margin: 1.5rem 0; }
+
+/* References */
+.refs { font-size: 0.95rem; color: var(--ink-muted); padding-left: 1.4rem; }
+.refs li { margin-bottom: 0.4em; }
+.refs cite { font-style: normal; }
+.prose h3 { margin-top: 2rem; }
 
 /* Two-column facts */
 .facts {
@@ -178,7 +181,7 @@ img { max-width: 100%; height: auto; display: block; }
   border-radius: var(--radius);
   padding: 1.1rem 1.25rem;
 }
-.facts strong { display: block; font-family: var(--font-head); font-size: 1.15rem; margin-bottom: 0.25rem; }
+.facts strong { display: block; font-size: 1.05rem; margin-bottom: 0.25rem; }
 
 /* News list */
 .news { list-style: none; margin: 0; padding: 0; }
@@ -195,7 +198,7 @@ img { max-width: 100%; height: auto; display: block; }
 /* Team grid */
 .team {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   align-items: start;
   margin: 0;
@@ -203,16 +206,15 @@ img { max-width: 100%; height: auto; display: block; }
   list-style: none;
 }
 .member {
-  background: var(--paper-2);
-  border-radius: var(--radius);
-  padding: 1.25rem;
+  padding: 1rem 0.5rem;
+  text-align: center;
 }
 .member img {
-  width: 120px;
-  height: 120px;
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
-  margin-bottom: 1rem;
+  margin: 0 auto 1rem;
   background: var(--blue-soft);
 }
 .member h3 { margin-bottom: 0.15em; }
@@ -245,7 +247,8 @@ img { max-width: 100%; height: auto; display: block; }
 /* Small screens */
 @media (max-width: 720px) {
   .hero { grid-template-columns: 1fr; gap: 1.5rem; }
-  .hero-art { max-width: 320px; }
+  .hero-title { max-width: none; }
+  .hero-art { max-width: 320px; justify-self: start; }
   .news li { grid-template-columns: 1fr; gap: 0.2rem; }
 }
 

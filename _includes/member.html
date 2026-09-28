@@ -1,7 +1,0 @@
-<li class="member">
-  <img src="{{ include.m.photo | default: 'assets/img/team/placeholder.svg' | relative_url }}" alt="{{ include.m.alt | default: include.m.name }}" width="120" height="120" loading="lazy">
-  <h3>{% if include.m.link %}<a href="{{ include.m.link }}">{{ include.m.name }}</a>{% else %}{{ include.m.name }}{% endif %}</h3>
-  {% if include.m.role %}<p class="role">{{ include.m.role }}</p>{% endif %}
-  {% if include.m.affiliation %}<p class="affil">{{ include.m.affiliation }}</p>{% endif %}
-  {% if include.m.bio and include.m.bio != "" %}<p>{{ include.m.bio }}</p>{% endif %}
-</li>

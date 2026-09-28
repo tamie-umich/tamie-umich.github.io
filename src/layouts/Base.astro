@@ -1,0 +1,71 @@
+---
+import '../styles/style.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const SITE = 'TAMIE';
+const DEFAULT_DESC =
+  'TAMIE (Trainable Accessible Musical Instruments and Environments) — a University of Michigan Arts Initiative FEAST project where users train digital musical instruments to respond to their own movements.';
+
+const { title, description = DEFAULT_DESC } = Astro.props;
+const pageTitle = title && title !== SITE ? `${title} · ${SITE}` : SITE;
+const path = Astro.url.pathname;
+
+const nav = [
+  { label: 'Home', href: '/' },
+  { label: 'Team', href: '/team/' },
+  { label: 'Posts', href: '/posts/' },
+];
+const isCurrent = (href: string) => (href === '/' ? path === '/' : path.startsWith(href));
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="/img/favicon.svg" type="image/svg+xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header">
+      <nav class="nav" aria-label="Main">
+        <a class="brand" href="/">
+          <span class="brand-mark" aria-hidden="true">🎵</span>
+          <span>TAMIE</span>
+        </a>
+        <ul class="nav-links">
+          {
+            nav.map((item) => (
+              <li>
+                <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            ))
+          }
+        </ul>
+      </nav>
+    </header>
+
+    <main id="main" class="site-main">
+      <slot />
+    </main>
+
+    <footer class="site-footer">
+      <p class="muted">© {new Date().getFullYear()} TAMIE · <a href="https://github.com/tamie-umich">GitHub</a></p>
+    </footer>
+  </body>
+</html>

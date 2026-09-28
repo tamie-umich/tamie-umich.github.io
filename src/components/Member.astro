@@ -1,0 +1,19 @@
+---
+import type { Member } from '../lib/data';
+interface Props { m: Member }
+const { m } = Astro.props;
+---
+
+<li class="member">
+  <img src={m.photo ?? '/img/team/placeholder.svg'} alt={m.alt ?? m.name} width="160" height="160" loading="lazy" />
+  <h3>{m.link ? <a href={m.link}>{m.name}</a> : m.name}</h3>
+  {m.role && <p class="role">{m.role}</p>}
+  {m.affiliation && (
+    <p class="affil">
+      {m.affiliation.split(' · ').map((line, i) => (
+        <>{i > 0 && <br />}{line}</>
+      ))}
+    </p>
+  )}
+  {m.bio && <p>{m.bio}</p>}
+</li>
