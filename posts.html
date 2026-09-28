@@ -1,0 +1,22 @@
+---
+layout: default
+title: Posts
+permalink: /posts/
+description: Progress updates from the TAMIE project.
+---
+<p class="eyebrow">Progress</p>
+<h1>Posts</h1>
+<p class="lede muted" style="max-width:60ch">Updates on what we're building, learning and performing.</p>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+    <p class="meta">
+      <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+      {% if post.author %} · {{ post.author }}{% endif %}
+    </p>
+    <p>{{ post.excerpt | strip_html | truncatewords: 40 }}</p>
+  </li>
+  {% endfor %}
+</ul>

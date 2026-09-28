@@ -1,0 +1,5 @@
+# Short news items shown on the landing page (newest first).
+# Fields: date (YYYY-MM-DD), text, link (optional).
+- date: 2026-09-28
+  text: TAMIE project website launched.
+  link: /posts/

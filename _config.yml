@@ -1,0 +1,23 @@
+title: TAMIE
+description: "Training Accessible Musical Instruments — a University of Michigan ArtsEngine FEAST project where users train digital musical instruments to respond to their own movements."
+url: "https://tamie-umich.github.io"
+baseurl: ""
+lang: en
+
+# Build
+markdown: kramdown
+permalink: /posts/:year/:month/:day/:title/
+timezone: America/Detroit
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
