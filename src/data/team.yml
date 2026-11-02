@@ -14,46 +14,52 @@ current:
 
   - name: Cecilia Hiros
     role: PhD Candidate
-    affiliation: Music Theory · University of Michigan
+    affiliation: Music Theory · B.M. Music Theory, Harp · University of Michigan
     bio: ""
     photo: /img/team/cecilia.jpg
     alt: Black-and-white photo of Cecilia Hiros seen through the strings of a harp
 
   - name: Sieun Kim
     role: PhD Student
-    affiliation: Electrical and Computer Engineering · University of Michigan
+    affiliation: Electrical and Computer Engineering · University of Michigan · B.S. Chemical and Biological Engineering, Computer Science and Engineering · Seoul National University
     bio: ""
     photo: /img/team/sieun.jpg
     alt: Sieun Kim smiling, seated outdoors in a white patterned cardigan
     link: https://kimsieun.com
 
   - name: Yixuan Jin
-    role: MS Student
-    affiliation: Performing Arts Technology · University of Michigan
+    role: Graduate Student
+    affiliation: M.A. Media Arts · University of Michigan · B.A. Art and Technology · Zhejiang Conservatory of Music
     bio: ""
     photo: /img/team/placeholder.svg
     alt: Portrait placeholder for Yixuan Jin
+    link: https://www.linkedin.com/in/yixuan-jin-858b62308/
 
   - name: Alex Shamoun
-    role: BS Student
-    affiliation: University of Michigan
+    role: Undergraduate Student
+    affiliation: B.S.E. Robotics · B.S. Sound Engineering · University of Michigan
     bio: ""
     photo: /img/team/placeholder.svg
     alt: Portrait placeholder for Alex Shamoun
+    link: https://www.linkedin.com/in/alexander-shamoun-b92973282/
+    
 
   - name: Amber Leslie
-    role: BS Student
-    affiliation: University of Michigan
+    role: Undergraduate Student
+    affiliation: B.S. Computer Science · Art & Design Minor · Earth Science Minor · University of Michigan
     bio: ""
     photo: /img/team/placeholder.svg
     alt: Portrait placeholder for Amber Leslie
+    link: www.linkedin.com/in/ambereleslie
+
 
   - name: Persi Gupta
-    role: BS Student
-    affiliation: University of Michigan
+    role: Undergraduate Student
+    affiliation: B.S. Electrical Engineering · University of Michigan
     bio: ""
     photo: /img/team/placeholder.svg
     alt: Portrait placeholder for Persi Gupta
+    link: https://www.linkedin.com/in/persi-gupta-a68220227/
 
 past:
   - name: Zaina Saab
